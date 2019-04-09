@@ -3,11 +3,11 @@ const path = require('path');
 const favicon = require('serve-favicon');
 const logger = require('morgan');
 
+const app = express();
+
 require('dotenv').config();
+require('./config/database');
 
-// require('./config/database');
-
-const app = express(); 
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -18,6 +18,8 @@ app.use(express.static(path.join(__dirname, 'build')));
 
 
 // Put API routes here, before the "catch all" route
+app.use('/api/users', require('./routes/api/users'));
+app.use(require('./config/auth'));
 
 // The following "catch all" route (note the *)is necessary
 // for a SPA's client-side routing to properly work
