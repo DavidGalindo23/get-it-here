@@ -1,3 +1,8 @@
+.body{ 
+  background-color: #004b77;
+  width:100%;
+  text-align: center;
+}
 .NavBar {
   display: flex;
   justify-content: center;
@@ -6,8 +11,11 @@
 
 .NavBar-link {
   margin: 0 10px;
+  color: white;
+  font-family: 'Viga', sans-serif;
 }
 
 .NavBar-welcome {
-  color: grey;
+  color: white;
+  font-family: 'Viga', sans-serif;
 }

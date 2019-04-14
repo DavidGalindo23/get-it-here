@@ -31,7 +31,8 @@ button:focus, .btn:focus {
   height: 50px;
   padding: 10px;
   margin: 15px 0;
-  color: grey;
-  font-size: 18px;
+  color: white;
+  font-size: 25px;
   text-align: center;
+  font-family: 'Fredoka One', cursive;
 }
