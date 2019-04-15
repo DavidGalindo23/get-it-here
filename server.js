@@ -28,13 +28,6 @@ app.get('/*', function(req,res){
     res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
-app.get('/app/:id', checkUserAuth, findApp, renderView, sendJSON);
-
-function checkUserAuth(req, res, next) {
-  if (req.session.user) return next();
-  return next(new NotAuthorizedError());
-}
-
 const port = process.env.PORT || 3001;
 
 app.listen(port, function(){ 
