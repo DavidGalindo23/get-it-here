@@ -6,7 +6,6 @@ import LoginPage from '../LoginPage/LoginPage';
 import NavBar from '../../components/NavBar/NavBar';
 import userService from '../../utils/userService';
 import Explore from '../Explore/Explore'
-import {getEvents} from '../../utils/tm-api';
 
 
 class App extends Component {
@@ -33,8 +32,6 @@ class App extends Component {
   /*--- Lifecycle Methods ---*/
   async componentDidMount() {
     const user = userService.getUser();
-    const events = await getEvents();
-    console.log(events);
     this.setState({ user});
   }
 
@@ -54,18 +51,17 @@ class App extends Component {
               handleSignupOrLogin={this.handleSignupOrLogin}
               />
             }/>  
-         <Route exact path='/login' render={() => 
-            <LoginPage
-            handleSignupOrLogin={this.handleSignupOrLogin}
-            />
-          }/>  
-          <div>
+          <Route exact path='/login' render={({ history }) => 
+              <LoginPage
+              history={history}
+              handleSignupOrLogin={this.handleSignupOrLogin}
+              />
+            }/>  
             <Route exact path='/explore' render={(props) =>
               <Explore
                 {...props}
               />
             }/>
-          </div>
         </Switch>
       </div>
     );

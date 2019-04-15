@@ -11,11 +11,12 @@ import tokenService from './tokenService'
 const BASE_URL = '/api/events/'
 
 export function getEvents() {
+    tokenService.getToken()
     return fetch(BASE_URL + 'getall', {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
-            'Authorization': 'Bearer ' + tokenService.getToken(),
+            'Authorization' : 'Bearer ' + tokenService.getToken()
         },
     }).then(res => {
         if (res.ok) return res.json();

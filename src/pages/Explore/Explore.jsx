@@ -12,6 +12,8 @@ class Explore extends React.Component{
     async componentDidMount() {
         const search = await getEvents();
         this.setState({events: search.events})
+        const events = await getEvents();
+        console.log(events);
     }
     
     render() {
