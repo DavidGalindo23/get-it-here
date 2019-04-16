@@ -1,7 +1,19 @@
+.container{
+    align-content: center;
+    align-items: center;
+}
+
 .img{ 
     height: 200px;
 }
-
-.text{ 
-    align-items: center;
+.bottom{
+    padding-bottom: 30px;
+}
+.text-center{ 
+    border-style: solid;
+    border-color: #004b77;
+}
+.div-body, .bottom{ 
+    font-family: 'Prompt', sans-serif;
+    font-size: 20px;
 }

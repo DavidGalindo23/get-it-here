@@ -6,7 +6,7 @@ module.exports = {
 
 
 function getEvents(req, res) { 
-    const BASE_URL = 'https://app.ticketmaster.com/discovery/v2/events?';
+    const BASE_URL = 'https://app.ticketmaster.com/discovery/v2/events?countryCode=US&';
     // return fetch(`${BASE_URL}apikey=${process.env.TM}`, {mode: "cors"})
     //     .then(res => res.join());
     request({url: `${BASE_URL}apikey=${process.env.TM}`}, function(err, response, body){
@@ -14,3 +14,4 @@ function getEvents(req, res) {
     });
 
 }
+

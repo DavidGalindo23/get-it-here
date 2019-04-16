@@ -6,7 +6,7 @@ import LoginPage from '../LoginPage/LoginPage';
 import NavBar from '../../components/NavBar/NavBar';
 import userService from '../../utils/userService';
 import Explore from '../Explore/Explore'
-
+import Welcome from '../../components/Welcome/Welcome';
 
 class App extends Component {
   constructor(){ 
@@ -45,6 +45,9 @@ class App extends Component {
           handleLogout={this.handleLogout}
          />
         <Switch>
+          <Route exact path='/' render={()=>
+            <Welcome/>
+          }/>
             <Route exact path='/signup' render={({ history }) => 
               <SignupPage style={{backgroundColor: '#004b77', margin: '0'}}
               history={history}
