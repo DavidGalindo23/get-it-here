@@ -5,6 +5,8 @@
 
 This is a Mern stack app. the concept of the website is that users only need to have one tab open to look for the best ticket price.
 
+![explore](/snapshots/explore.png)
+
 ## Technologies use 
 
 * React
